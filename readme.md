@@ -9,3 +9,7 @@ Correr el broker:
 
 docker container ls
 docker rm -f <cname>
+
+
+el de acceso libre
+ mqtt://test.mosquitto.org 
