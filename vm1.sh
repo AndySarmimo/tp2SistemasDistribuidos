@@ -2,13 +2,13 @@
 #!/bin/bash
 
 
-docker network create mis-libros-net
+#docker network create mis-libros-net
 
 
 # Broker
-docker run -it --rm -p 1883:1883 -d --network mis-libros-net --name broker -v $PWD/broker/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
+#docker run -it --rm -p 1883:1883 -d --network mis-libros-net --name broker -v $PWD/broker/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
 
-# docker run -it --rm -p 21062:1883 -v $PWD/broker/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
+#docker run -it --rm -p 21212:1883 -d --network mis-libros-net --name broker -v $PWD/broker/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
 
 
 
