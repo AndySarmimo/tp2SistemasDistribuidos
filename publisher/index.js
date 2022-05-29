@@ -1,6 +1,6 @@
 const mqtt = require('mqtt')
- const client  = mqtt.connect('mqtt://broker')
-// const client  = mqtt.connect('mqtt://'+process.env.HOST+':'+process.env.PORT)
+//  const client  = mqtt.connect('mqtt://'+ process.env.HOST)
+const client  = mqtt.connect('mqtt://'+process.env.HOST+':'+process.env.PORT)
  //const client  = mqtt.connect("mqtt://192.168.1.86:1883")
 
 // print process.argv
