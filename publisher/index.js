@@ -14,24 +14,23 @@ function ConnectEvent(){
             var ipAdd ;
 
             const os = require('os');
-            console.log("os hostname", os.hostname() );
+            // console.log("os hostname", os.hostname() );
         
         
             require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-                console.log('addr: ' + add);
+                // console.log('addr: ' + add);
                 ipAdd = add
             })
               
             
             var jsonFile = JSON.stringify(
-                {time: new Date().toISOString(),
-                container: os.hostname,
+                {time: new Date().toISOString(),container: os.hostname,
                 ip: ipAdd
                 });
         
             console.log(JSON.parse(jsonFile))
         
-            client.publish(process.env.TOPIC, process.argv[2])
+            client.publish(process.env.TOPIC, JSON.parse(jsonFile))
     
     
     },3000);
