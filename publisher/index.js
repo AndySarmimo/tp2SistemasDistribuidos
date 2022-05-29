@@ -26,6 +26,7 @@ function ConnectEvent(){
         ip: ipAdd
         });
 
+    console.log(JSON.parse(jsonFile))
 
     client.publish(process.env.TOPIC, process.argv[2])
     
