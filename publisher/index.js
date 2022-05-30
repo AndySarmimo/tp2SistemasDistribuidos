@@ -8,6 +8,11 @@ const moment = require('moment');
 const os = require('os');
 const add = require('address');
 
+let now = new Date();
+console.log(now)
+
+console.log(moment(now).format('ddd MMMM DD h:MM:ss a yyyy' ) );
+
 function ConnectEvent(){
     
 
