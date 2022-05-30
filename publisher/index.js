@@ -29,7 +29,7 @@ function ConnectEvent(){
             client.publish(process.env.TOPIC, jsonFile)
     
     
-    },3000);
+    },5000);
 
 
     
