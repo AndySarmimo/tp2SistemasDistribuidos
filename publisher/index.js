@@ -24,13 +24,14 @@ function ConnectEvent(){
               
             
             var jsonFile = JSON.stringify(
-                {time: new Date().toISOString(),container: os.hostname,
+                {
+                    time: new Date().toISOString(),container: os.hostname,
                 ip: ipAdd
                 });
-        
+            console.log("H")
             console.log(JSON.parse(jsonFile))
         
-            client.publish(process.env.TOPIC, JSON.parse(jsonFile))
+            client.publish(process.env.TOPIC, jsonFile)
     
     
     },3000);

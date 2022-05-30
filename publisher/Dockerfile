@@ -22,5 +22,4 @@ ENV PORT = 1883
 ENV TOPIC = 'libros'
 
 ENTRYPOINT [ "node" , "index.js" ]
-CMD [ "LOS MISERABLES"]
 
