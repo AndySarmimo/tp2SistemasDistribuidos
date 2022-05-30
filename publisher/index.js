@@ -1,9 +1,12 @@
 const mqtt = require('mqtt')
-//  const client  = mqtt.connect('mqtt://'+ process.env.HOST)
+
 const client  = mqtt.connect('mqtt://'+process.env.HOST+':'+process.env.PORT)
- //const client  = mqtt.connect("mqtt://192.168.1.86:1883")
+ 
 
+const moment = require('moment');
 
+const os = require('os');
+const add = require('address');
 
 function ConnectEvent(){
     
@@ -11,15 +14,10 @@ function ConnectEvent(){
     setInterval(
         function(){
             
-
-            const os = require('os');
-            const add = require('address');
-           
-            
-            console.log("ip add ", add.ip())
+            let now = new Date();
 
             var jsonFile = JSON.stringify(
-                {time: new Date().toISOString(),
+                {time: moment(now).format('ddd MMMM DD h:MM:ss a yyyy' ) ,
                     container: os.hostname(),
                     ip: add.ip()
                 }
