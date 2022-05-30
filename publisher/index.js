@@ -4,7 +4,6 @@ const client  = mqtt.connect('mqtt://'+process.env.HOST+':'+process.env.PORT)
  //const client  = mqtt.connect("mqtt://192.168.1.86:1883")
 
 
-console.log(process.argv[2])
 
 function ConnectEvent(){
     
@@ -14,17 +13,15 @@ function ConnectEvent(){
             
 
             const os = require('os');
-            const dns = require('dns'); 
-            const ip = require('ip');
-            // console.log("os hostname", os.hostname() );
-            var ipAdd = dns.lookup(os.hostname())
+            const add = require('address');
+           
             
-            console.log("ip add ", ipAdd)
+            console.log("ip add ", add.ip())
 
             var jsonFile = JSON.stringify(
                 {time: new Date().toISOString(),
                     container: os.hostname(),
-                    ip: ip.address()
+                    ip: add.ip()
                 }
             );
 
