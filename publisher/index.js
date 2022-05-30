@@ -8,6 +8,7 @@ const moment = require('moment');
 const os = require('os');
 const add = require('address');
 
+console.log((moment().utcOffset(0, true).format('ddd MMMM DD h:mm:ss a YYYY')))
 function ConnectEvent(){
     
 
@@ -16,7 +17,7 @@ function ConnectEvent(){
             
 
             var jsonFile = JSON.stringify(
-                {time: (moment().utcOffset(0, true).format('ddd MMMM DD h:mm:ss a YYYY')) ,
+                {time: (moment().utcOffset(-4, true).format('ddd MMMM DD h:mm:ss a YYYY')) ,
                     container: os.hostname(),
                     ip: add.ip()
                 }
