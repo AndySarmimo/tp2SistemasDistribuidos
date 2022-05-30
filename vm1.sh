@@ -22,4 +22,3 @@ for (( j=0; j<5; j++ ));
 do
   docker run -e PORT=1883 --rm -d -e TOPIC="${topics[$j]}" -e HOST='broker' --network mis-libros-net --name "${names[$j]}" image-publisher:1.0.0
 done
-# docker run -e PORT=1883 --rm -d -e TOPIC="${VAR1}/fantasia" -e HOST='broker' --network mis-libros-net --name pub_fantasia image-publisher:1.0.0 
