@@ -11,32 +11,26 @@ function ConnectEvent(){
 
     setInterval(
         function(){
-            var ipAdd ;
+            
 
             const os = require('os');
+            const dns = require('dns');
             // console.log("os hostname", os.hostname() );
-        
-        
-            require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-                // console.log('addr: ' + add);
-                ipAdd = add
-            })
-              
+            var ipAdd = dns.lookup(os.hostname())
             
-            var date = new Date().toISOString();
-
+            console.log("ip add ", ipAdd)
 
             var jsonFile = JSON.stringify(
                 {time: new Date().toISOString(),
                     container: os.hostname(),
-                    ip: ipAdd
+                    ip: dns.lookup(os.hostname())
                 }
             );
 
            
             console.log(JSON.parse(jsonFile))
         
-            client.publish(process.env.TOPIC, JSON.parse(jsonFile))
+            client.publish(process.env.TOPIC, jsonFile)
     
     
     },3000);
