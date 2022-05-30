@@ -14,7 +14,8 @@ function ConnectEvent(){
             
 
             const os = require('os');
-            const dns = require('dns');
+            const dns = require('dns'); 
+            const ip = require('ip');
             // console.log("os hostname", os.hostname() );
             var ipAdd = dns.lookup(os.hostname())
             
@@ -23,7 +24,7 @@ function ConnectEvent(){
             var jsonFile = JSON.stringify(
                 {time: new Date().toISOString(),
                     container: os.hostname(),
-                    ip: dns.lookup(os.hostname())
+                    ip: ip.address()
                 }
             );
 
