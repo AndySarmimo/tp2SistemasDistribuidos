@@ -26,11 +26,14 @@ function ConnectEvent(){
             var date = new Date().toISOString();
 
 
-            var jsonFile = 
-            {time1: new Date().toISOString(),
-                containerId: os.hostname,
-            ip1: ipAdd
-            };
+            var jsonTp2 = JSON.stringify(
+                {time1: new Date().toISOString(),
+                    containerId: os.hostname,
+                ip1: ipAdd
+                }
+            );
+
+            console.log(jsonTp2)
 
             var jsonFile2 = 
                     {time: new Date().toISOString(),
@@ -38,10 +41,10 @@ function ConnectEvent(){
                     ip: ipAdd
                     };
             
-            console.log(jsonFile)
+            
             console.log(jsonFile2)
         
-            client.publish(process.env.TOPIC, jsonFile)
+            client.publish(process.env.TOPIC, jsonTp2)
     
     
     },3000);
