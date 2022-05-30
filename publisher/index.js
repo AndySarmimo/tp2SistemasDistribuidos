@@ -23,13 +23,23 @@ function ConnectEvent(){
             })
               
             
-            var jsonFile = JSON.stringify(
-                {
-                    time: new Date().toISOString(),container: os.hostname,
-                ip: ipAdd
-                });
-            console.log("H")
-            console.log(JSON.parse(jsonFile))
+            var date = new Date().toISOString();
+
+
+            var jsonFile = 
+            {time1: new Date().toISOString(),
+                containerId: os.hostname,
+            ip1: ipAdd
+            };
+
+            var jsonFile2 = 
+                    {time: new Date().toISOString(),
+                        container: os.hostname,
+                    ip: ipAdd
+                    };
+            
+            console.log(jsonFile)
+            console.log(jsonFile2)
         
             client.publish(process.env.TOPIC, jsonFile)
     
