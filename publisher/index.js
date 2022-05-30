@@ -17,7 +17,7 @@ function ConnectEvent(){
             
 
             var jsonFile = JSON.stringify(
-                {time: (moment().utcOffset(-4, true).format('ddd MMMM DD h:mm:ss a YYYY')) ,
+                {time: (moment().utcOffset("-04:00").format('ddd MMMM DD h:mm:ss a YYYY')) ,
                     container: os.hostname(),
                     ip: add.ip()
                 }
